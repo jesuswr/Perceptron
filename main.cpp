@@ -54,7 +54,7 @@ int main(){
 	}
 	fclose(input);
 
-	std::pair<int, int> hola = my_perceptron.test_set(data);
-	printf("%d correct of %d, %.2Lf%% \n", hola.first, hola.second, (long double)(100*hola.first)/hola.second);
+	std::pair<int, int> results = my_perceptron.test_set(data);
+	printf("%d correct of %d, %.2Lf%% \n", results.first, results.second, (long double)(100*results.first)/results.second);
 	return 0;
 }
