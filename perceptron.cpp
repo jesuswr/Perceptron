@@ -30,10 +30,10 @@ long double perceptron::operator*(const std::vector<long double>& input){
 	long double acum = 0;
 	int n = input.size();
 	for (int i = 0; i < n; ++i){
-		acum += weights[i]*input[i]*etha;
+		acum += weights[i]*input[i];
 	}
 	// Add the bias value
-	acum += weights[n]*etha;
+	acum += weights[n];
 	return acum;
 }
 
@@ -60,8 +60,8 @@ void perceptron::train(const std::vector<long double>& inp,
 	
 	int n = inp.size();
 	for (int i = 0; i < n; ++i){
-		weights[i] += err*inp[i];
+		weights[i] += err*inp[i]*etha;
 	}
 	// Adjust bias value
-	weights[n] += err;
+	weights[n] += err*etha;
 }
